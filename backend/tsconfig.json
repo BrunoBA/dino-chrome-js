@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "rootDir": "./src",
+    // "sourceMap": true,
+    "outDir": "./dist",
+    "strict": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+    // "module": "commonjs",
+    "module": "system",
+    // "strictNullChecks": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

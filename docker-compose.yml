@@ -3,19 +3,6 @@ networks:
   api:
     driver: "bridge"
 services: 
-  frontend:
-    build:
-      context: .
-      dockerfile: ./docker/frontend/Dockerfile
-    container_name: frontend
-    ports:
-      - 3000:3000
-      - 4200:4200
-    volumes: 
-      - ./frontend:/app/home
-    tty: true
-    networks: 
-      - api
   backend:
     build:
       context: .
