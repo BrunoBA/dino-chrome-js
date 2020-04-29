@@ -1,13 +1,31 @@
 System.register([], function (exports_1, context_1) {
     "use strict";
-    var JOGO;
+    var Game;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [],
         execute: function () {
-            exports_1("JOGO", JOGO = {
-                nome: "Jogo do Dinossauro!!!!"
-            });
+            Game = class Game {
+                constructor(element = document.getElementById('myCanvas')) {
+                    this.element = element;
+                    this.canvas = this.element.getContext('2d');
+                    this.canvas.fillStyle = "blue";
+                    this.canvas.fillRect(0, 0, this.element.width, this.element.height);
+                }
+                draw() {
+                    return this.canvas;
+                }
+                getCanvasHeight() {
+                    return this.element.height;
+                }
+                getCanvasWidth() {
+                    return this.element.width;
+                }
+                clear() {
+                    this.canvas.clearRect(0, 0, this.element.width, this.element.height);
+                }
+            };
+            exports_1("Game", Game);
         }
     };
 });
