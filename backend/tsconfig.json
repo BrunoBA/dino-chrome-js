@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "rootDir": "./src",
-    // "sourceMap": true,
+    "sourceMap": true,
     "outDir": "./dist",
     "strict": false,
     "noUnusedLocals": true,

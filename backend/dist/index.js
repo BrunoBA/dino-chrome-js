@@ -1,43 +1,40 @@
-System.register(["./teste", "./characters"], function (exports_1, context_1) {
+System.register(["./game"], function (exports_1, context_1) {
     "use strict";
-    var teste_1, characters_1, frame, Jogo, dino, jogo, sprite, format;
+    var GAME, sprites, frame, REFRESH_RATE, QTD_SPRITES, spriteIndex, floor, floorPosition;
     var __moduleName = context_1 && context_1.id;
-    function checkFormat(format) {
-        if (format == characters_1.DINOSAUR.RIGHT_LEG_UP) {
-            return characters_1.DINOSAUR.LEFT_LEG_UP;
-        }
-        return characters_1.DINOSAUR.RIGHT_LEG_UP;
-    }
     function loop() {
-        dino.clear();
+        floorPosition = -(frame % floor.getWidth());
         frame += 1;
-        jogo.draw().drawImage(sprite, 2, 2, 74, 74, 10, 10, 74, 74);
-        if (frame % 10 == 0) {
-            format = checkFormat(format);
+        if (frame % REFRESH_RATE == 0) {
+            sprites[spriteIndex].clear();
+            spriteIndex = (spriteIndex + 1 == QTD_SPRITES) ? 0 : spriteIndex + 1;
         }
-        dino.draw().drawImage(sprite, format, 2, characters_1.DINOSAUR.DEFAULT_HEIGHT, characters_1.DINOSAUR.DEFAULT_WIDTH, 10, 200, characters_1.DINOSAUR.DEFAULT_HEIGHT, characters_1.DINOSAUR.DEFAULT_WIDTH);
+        console.log(floorPosition);
+        floor.setX(floorPosition);
+        floor.draw();
+        sprites[spriteIndex].setPosition(10, 114).clear().draw();
         requestAnimationFrame(loop);
     }
     return {
         setters: [
-            function (teste_1_1) {
-                teste_1 = teste_1_1;
-            },
-            function (characters_1_1) {
-                characters_1 = characters_1_1;
+            function (GAME_1) {
+                GAME = GAME_1;
             }
         ],
         execute: function () {
+            sprites = [
+                GAME.DINO_LEFT,
+                GAME.DINO_RIGHT,
+            ];
             frame = 0;
-            Jogo = class Jogo extends teste_1.Game {
-            };
-            dino = new Jogo();
-            jogo = new Jogo();
-            console.log('test');
-            sprite = new Image();
-            sprite.src = './dino_chrome.png';
-            format = characters_1.DINOSAUR.LEFT_LEG_UP;
+            REFRESH_RATE = 5;
+            QTD_SPRITES = sprites.length;
+            spriteIndex = 0;
+            floor = GAME.FLOOR;
+            floor.setPosition(100, 200);
+            floorPosition = 0;
             loop();
         }
     };
 });
+//# sourceMappingURL=index.js.map

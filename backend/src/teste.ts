@@ -2,7 +2,7 @@ export abstract class Game {
     public canvas: CanvasRenderingContext2D;
 
     constructor(
-        public element = <HTMLCanvasElement>document.getElementById('myCanvas'),
+        public element = <HTMLCanvasElement>document.getElementById('canvas-game'),
     ) {
         this.canvas = this.element.getContext('2d');
         this.canvas.fillStyle = "blue";

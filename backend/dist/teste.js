@@ -6,7 +6,7 @@ System.register([], function (exports_1, context_1) {
         setters: [],
         execute: function () {
             Game = class Game {
-                constructor(element = document.getElementById('myCanvas')) {
+                constructor(element = document.getElementById('canvas-game')) {
                     this.element = element;
                     this.canvas = this.element.getContext('2d');
                     this.canvas.fillStyle = "blue";
@@ -29,3 +29,4 @@ System.register([], function (exports_1, context_1) {
         }
     };
 });
+//# sourceMappingURL=teste.js.map
