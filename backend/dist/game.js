@@ -9,7 +9,8 @@ System.register([], function (exports_1, context_1) {
                 constructor(element = document.getElementById(CANVAS_ID)) {
                     this.element = element;
                     this.canvas = this.element.getContext('2d');
-                    this.canvas.fillStyle = "blue";
+                    this.canvas.fillStyle = "white";
+                    this.canvas.globalAlpha = 0.5;
                     this.canvas.fillRect(0, 0, this.element.width, this.element.height);
                 }
                 getCanvasHeight() {
@@ -27,7 +28,7 @@ System.register([], function (exports_1, context_1) {
                 }
             };
             exports_1("Game", Game);
-            exports_1("SPRITE_PATH", SPRITE_PATH = './dino_chrome.png');
+            exports_1("SPRITE_PATH", SPRITE_PATH = './transparent_file.png');
             exports_1("CANVAS_ID", CANVAS_ID = 'canvas-game');
             exports_1("SPRITE", SPRITE = new Image());
             SPRITE.src = SPRITE_PATH;

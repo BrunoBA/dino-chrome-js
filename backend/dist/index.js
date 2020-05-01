@@ -1,6 +1,6 @@
 System.register(["./game"], function (exports_1, context_1) {
     "use strict";
-    var GAME, sprites, frame, REFRESH_RATE, QTD_SPRITES, spriteIndex, floor, floorPosition;
+    var GAME, sprites, frame, REFRESH_RATE, QTD_SPRITES, spriteIndex, jogo, floor, floorPosition;
     var __moduleName = context_1 && context_1.id;
     function loop() {
         floorPosition = -(frame % floor.getWidth());
@@ -12,7 +12,7 @@ System.register(["./game"], function (exports_1, context_1) {
         console.log(floorPosition);
         floor.setX(floorPosition);
         floor.draw();
-        sprites[spriteIndex].setPosition(10, 114).clear().draw();
+        sprites[spriteIndex].setPosition(10, 124).clear().draw();
         requestAnimationFrame(loop);
     }
     return {
@@ -30,6 +30,7 @@ System.register(["./game"], function (exports_1, context_1) {
             REFRESH_RATE = 5;
             QTD_SPRITES = sprites.length;
             spriteIndex = 0;
+            jogo = new GAME.Game();
             floor = GAME.FLOOR;
             floor.setPosition(100, 200);
             floorPosition = 0;

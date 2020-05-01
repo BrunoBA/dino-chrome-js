@@ -1,16 +1,30 @@
-# docker_boilerplate
 
-# Backend 
-* AdonisJS
-* Typescript
-* ExpressJS
+## Dino Chrome on TS
 
-# Frontend 
-* Angular CLI
-* Vue CLI
+A simple code to learn Typescript with fun
+  
 
-# To run the project exec:
+## Usage
+
+  
+Up docker:
 ```
-docker-compose down -v && docker-compose up --build -d && docker exec -it backend (or frontend) /bin/sh
+docker-compose up -d
 ```
 
+Enter on container:
+```
+docker exec -it backend /bin/sh
+```
+
+Execute the project:
+```
+npm start
+```
+
+The project will run on port 8080, if want to change please edit the file `backend/browser-sync.json` on property __port:__ and on container (`docker-compose.yml` and `docker/backend/Dockerfile`)
+## Inpired by
+
+https://github.com/omariosouto/flappy-bird-devsoutinho
+
+https://medium.com/@PhilippKief/how-to-debug-typescript-with-vs-code-9cec93b4ae56

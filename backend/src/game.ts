@@ -5,7 +5,8 @@ export class Game {
         public element = <HTMLCanvasElement>document.getElementById(CANVAS_ID),
     ) {
         this.canvas = this.element.getContext('2d');
-        this.canvas.fillStyle = "blue";
+        this.canvas.fillStyle = "white";
+        this.canvas.globalAlpha = 0.5;
         this.canvas.fillRect(0, 0, this.element.width, this.element.height);
     }
 
@@ -27,7 +28,7 @@ export class Game {
     }
 }
 
-export const SPRITE_PATH = './dino_chrome.png'
+export const SPRITE_PATH = './transparent_file.png'
 export const CANVAS_ID = 'canvas-game'
 export const SPRITE: CanvasImageSource = new Image();
 SPRITE.src = SPRITE_PATH;

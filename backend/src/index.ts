@@ -1,6 +1,5 @@
 import * as GAME from "./game";
 
-
 let sprites: Array<GAME.StateSprite> = [
     // GAME.ICON_TRY_AGAIN,
     // GAME.MSG_GAME_OVER,
@@ -45,7 +44,7 @@ const REFRESH_RATE: number = 5;
 const QTD_SPRITES: number = sprites.length;
 let spriteIndex = 0;
 
-// let jogo = new GAME.Game();
+let jogo = new GAME.Game();
 
 let floor = GAME.FLOOR;
 floor.setPosition(100, 200);
@@ -65,7 +64,7 @@ function loop() {
     console.log(floorPosition);
     floor.setX(floorPosition);
     floor.draw();
-    sprites[spriteIndex].setPosition(10, 114).clear().draw();
+    sprites[spriteIndex].setPosition(10, 124).clear().draw();
     requestAnimationFrame(loop)
 }
 
